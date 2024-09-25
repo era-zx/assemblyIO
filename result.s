@@ -13,7 +13,7 @@ _start: # mark start point of the executable code
 	movl $0, %ebx # move linux stin of 1 to ebx register
 	leal in_buffer, %ecx #move our buffer address to the ecx register
 	movl $2, %edx # read 2 bytes of buffer
-	int $0x80 # trigger OS intterupt as ready to read
+	int $0x80 # trigger OS interrupt as ready to read
 
 	#input comparison
 	cmpb $48, in_buffer #compare the ascii char value of '0'. 48 in immediate decimal. if (buffer high-byte == 00110000(aka 48)) { zero_flag = true }
